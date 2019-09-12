@@ -1,15 +1,15 @@
 import string
 
 
-def nthltr(str, n):
-    str = str.translate({ord(c): None for c in string.whitespace})
-    print(str)
-    newStr = ""
-    for i in range(1, len(str)):
+def nthltr(instr, n):
+    instr = instr.translate({ord(c): None for c in string.whitespace})
+    print(instr)
+    newstr = ""
+    for i in range(1, len(instr)):
         if i % n == 0:
-            newStr += str[i - 1]
+            newstr += instr[i - 1]
     print()
-    print(newStr)
+    print(newstr)
     return
 
 
@@ -17,6 +17,6 @@ nthltr("""WIGSAEPTNENECVRZNALTL   QIDXBOKJNTJORUVSFALON   PYIRTS
 GFCAIOYUNNDSHLIWEDNKEQURCBEMHD   ROTFTHSIE   APFETAOPTHLHVJEXER
 CJOAIF   XCMGKOEMDFZEPGRBAN   GHAFIMWEERURDKINYCCCALHN
 ZOIQUNAVTORETLLUNLEWISKGIBEAGNSPCITE
-TAGBRAYMTVWHQIEPFRGWIPVNBZG.""")
+TAGBRAYMTVWHQIEPFRGWIPVNBZG.""", 3)
 
 
