@@ -1,3 +1,4 @@
+#Preforms a basic caesar shift, then prints output
 def caesar(instr, shift):
     #print("Input String:", instr)
     instr = instr.upper()
@@ -9,22 +10,6 @@ def caesar(instr, shift):
         ltr = ord(char) - 65
         newstr += chr(((ltr + shift) % 26) + 65)
     print("Ciphered String:", newstr)
-
-
-def numToStr(instr, sep):
-    arr = instr.replace(".", " .").replace(","," ,").replace(sep, " + ").split()
-    retstr = ""
-
-    for char in arr:
-        if char == '+':
-            retstr += ' '
-        elif char == '.':
-            retstr += '.'
-        else:
-            x = int(char)
-            nch = chr(x + 65)
-            retstr += nch
-    return retstr
 
 
 # caesar("efgfoe uif fbtu xbmm pg uif dbtumf", -1)
