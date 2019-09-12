@@ -5,7 +5,7 @@
 # alphanumeric basis [0:A, 1:B, ..., 25:Z] {note: numbers this outside range will be removed}
 # Input should have spaces between numbers in the same word and word_separator dignifies key used to separate words
 # start_at_1 as true makes alphanumeric conversion along 1:A, 2:B, ..., 26:Z
-def num_to_str(input_string, word_separator, start_at_1=False):
+def num_to_str(input_string, word_separator, start_at_1=False) -> str:
 
     character_array = input_string.replace(".", " .").replace(",", " ,").replace("!", " !").replace("?", " ?").replace(word_separator, " + ").split()
     return_string = ""
