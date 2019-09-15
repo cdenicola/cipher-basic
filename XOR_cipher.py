@@ -1,5 +1,6 @@
 # File containing code for XOR ciphers
 import secrets
+from inputrefactor import yes_no_input
 
 # Basis for this cipher is contained in this proof
 # x ^ 0 = x   --> x ^ 0 ^ 0 = x
@@ -16,11 +17,9 @@ def xor_cipher():
     key = secrets.randbits(8)
     cipher_message = xor_operation(message, key)
     print("Your encrypted message:", cipher_message, end="\n\n")
-    user_response = ''
-    while user_response not in ['y', 'n']:
-        temp = input("Would you like to see your number deciphered? (y/n): ")
-        user_response = temp[0].lower()
-    if user_response == 'y':
+    
+    repeat_yes_no: bool = yes_no_input("Would you like to see your number deciphered? (y/n): ")
+    if repeat_yes_no:
         print("Your deciphered input:", xor_operation(cipher_message, key))
 
 xor_cipher()
