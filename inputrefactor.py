@@ -1,4 +1,18 @@
-# This file contains methods to modify inputs into the format accepted functions in this program
+# This file contains methods to assist other programs with inputs
+
+
+# Function takes message and asks repeating y/n question until user responds accordingly
+# Will return True if yes, False if no
+def yes_no_input(prompt_message) -> bool:
+    user_response = ""
+    while user_response not in ['y', 'n']:
+        temp = input(prompt_message)
+        user_response = temp[0].lower()  # enables entries with start letter y or n -- ex: yes, no, yay, nay, yep, nah
+
+    if user_response == 'y':
+        return True
+    else:
+        return False
 
 
 # Converts numerical input to text return output where each number relates to a letter in the message according to an
@@ -23,6 +37,7 @@ def num_to_str(input_string, word_separator, start_at_1=False) -> str:
             if 0 <= input_integer <= 25:
                 nch = chr(input_integer + 65)
                 return_string += nch
+
     return return_string
 
 print(num_to_str("""4	18	15?	 	13	19	11!	 	19	3
