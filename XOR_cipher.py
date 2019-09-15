@@ -12,10 +12,10 @@ def xor_operation(message, key) -> int:
 
 
 def xor_cipher():
-    message = int(input("Input a number between 0 and 256: "))
+    input_number = int(input("Input a number between 0 and 256: "))
     print("Generating random key...")
     key = secrets.randbits(8)
-    cipher_message = xor_operation(message, key)
+    cipher_message = xor_operation(input_number, key)
     print("Your encrypted message:", cipher_message, end="\n\n")
     
     repeat_yes_no: bool = yes_no_input("Would you like to see your number deciphered? (y/n): ")
