@@ -6,18 +6,19 @@ from inputrefactor import yes_no_input
 # x ^ 0 = x   --> x ^ 0 ^ 0 = x
 # x ^ 1 = ~x  --> x ^ 1 ^ 1 = x
 
-
+# Preforms an XOR operation, returns result
 def xor_operation(message, key) -> int:
     return message ^ key
 
-
+# Can preform XOR cipher on eight-bit int
 def xor_cipher():
+    # Gets input between 0 and 255 (8-bit unsigned)
     while True:
         input_number = int(input("Input a number between 0 and 255: "))
         if 0 <= input_number < 256:
             break
 
-    print("Your input:", input_number, "-- Binary:", bin(input_number))
+    print("\nYour input:", input_number, "-- Binary:", bin(input_number))
     print("Generating random key...")
     key = secrets.randbits(8)
     cipher_message = xor_operation(input_number, key)
@@ -26,5 +27,6 @@ def xor_cipher():
     repeat_yes_no: bool = yes_no_input("Would you like to see your number deciphered? (y/n): ")
     if repeat_yes_no:
         print("Your deciphered input:", xor_operation(cipher_message, key))
+
 
 xor_cipher()
